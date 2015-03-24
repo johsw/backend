@@ -1,0 +1,80 @@
+@font-face {
+  font-family: KontrapunktBob;
+  src: url("./assets/fonts/bob/light.otf") format("opentype");
+}
+@font-face {
+	font-family: 'icons';
+	src:url('./assets/fonts/icons/icomoon.eot?-dmdza9');
+	src:url('./assets/fonts/icons/icomoon.eot?#iefix-dmdza9') format('embedded-opentype'),
+		url('./assets/fonts/icons/icomoon.woff?-dmdza9') format('woff'),
+		url('./assets/fonts/icons/icomoon.ttf?-dmdza9') format('truetype'),
+		url('./assets/fonts/icons/icomoon.svg?-dmdza9#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+$normal-page-header-height: 65px;
+$mobile-page-header-height: 55px;
+
+// Typography
+$sans-serif: $helvetica;
+$serif: $georgia;
+$base-font-family: KontrapunktBob, 'Open Sans', $sans-serif;
+$header-font-family: $base-font-family;
+
+// Sizes
+$base-font-size: 1em;
+$base-line-height: $base-font-size * 1.5;
+$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
+$header-line-height: $base-font-size * 1.25;
+$base-border-radius: em(3);
+
+// Colors
+$blue: #477DCA;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #DDD;
+$light-red: #FBE3E4;
+$light-yellow: #FFF6BF;
+$light-green: #E6EFC2;
+
+// Custom colors - http://paletton.com/#uid=7330u0kleqtbzEKgVuIpcmGtdhZ
+$mg-light-background-alternative: #E9E9E9;
+$mg-light-background: #F2F2F2;
+$mg-lightest-green: #BAE0D0;
+$mg-lighter-green: #4FA882;
+$mg-green: #198B5A;
+$mg-darker-green: #198B5A;
+$mg-darkest-green: #09623C;
+
+
+// Background Color
+$base-background-color: white;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $blue;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+// Border color
+$base-border-color: $light-gray;
+
+// Flash Colors
+$alert-color: $light-yellow;
+$error-color: $light-red;
+$notice-color: $light-yellow;
+$success-color: $light-green;
+
+// Forms
+$form-border-color: $base-border-color;
+$form-border-color-hover: darken($base-border-color, 10);
+$form-border-color-focus: $base-accent-color;
+$form-border-radius: $base-border-radius;
+$form-box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-font-size: $base-font-size;
+$form-font-family: $base-font-family;

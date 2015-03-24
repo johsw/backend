@@ -1,0 +1,356 @@
+/*
+Theme Name: Drupal 7 Starter Theme
+Theme URI: http://www.THEME.com
+Description: Drupal 7 Starter Theme for use as a starting template for building custom themes.
+Author: Matt Banks
+Author URI: http://www.kernelcreativemedia.com
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+*/
+
+
+// Bourbon imports
+@import "bourbon/bourbon/bourbon";
+@import "settings";
+@import "bourbon/neat/neat";
+@import "bourbon/base/base";
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+#main, #header-inner, #footer-inner {
+  @include outer-container;
+
+}
+
+#content {
+  padding: 0 10px;
+  @include span-columns(12);
+  position: relative;
+  padding-top: 75px;
+}
+
+footer {
+  padding: 0 10px;
+  width: 100%;
+  background: #A6A6A6;
+  margin-top: 40px;
+  color: #383838;
+  font-size: $base-font-size * 0.8;
+}
+#footer-inner {
+  padding-top: 10px;
+  text-align: center;
+  min-height: 60px;
+  a {
+    color: #383838;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    };
+  }
+}
+@include keyframes(enter) {
+  0% {
+    top: -65px;
+    opacity: 0.0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1.0;
+  }
+}
+#page-header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  padding: 0 10px;
+  height: $normal-page-header-height;
+  @include media($mobile) {
+    height: $mobile-page-header-height;
+  }
+  background: $mg-light-background;
+  box-shadow: 0px 1px 1px $mg-darkest-green;
+  a {
+    color: #5E5E5E;
+    //text-shadow: 1px 1px #000;
+  }
+  #masthead {
+    position: relative;
+
+    text-shadow: 0px 0px 1px #fff;
+
+  }
+
+
+  #site-logo {
+    margin-top: -5px;
+    position: relative;
+    width: 55px;
+    float: left;
+    font-size: 55px;
+    color: $mg-darker-green;
+    @include media($mobile) {
+      width: 50px;
+      font-size: 50px;
+    }
+
+    /*
+    @include animation-name(enter);
+    @include animation-duration(1.5s);
+    @include animation-iteration-count(1);
+    */
+  }
+
+
+  #site-name-wrapper {
+    margin-top: 10px;
+    line-height: 1;
+    font-size: 32px;
+    font-weight: bold;
+    @include span-columns(5);
+    @include media($mobile) {
+      font-size: 24px;
+      @include span-columns(2);
+    }
+
+    #site-slogan {
+      margin-top: 2px;
+      font-weight: 400;
+      font-size: 16px;
+      @include media($mobile) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  nav {
+    float: right;
+    margin-top: 30px;
+    #hamburger-button {
+      display: none;
+    }
+      @include media($mobile) {
+        margin-top: 10px;
+        #hamburger-button {
+          font-size: 30px;
+          float: right;
+          display: block;
+        }
+        ul {
+          display: none;
+          box-shadow: 0px 1px 1px $mg-darkest-green;
+          position: absolute;
+          right: 0;
+          top: $normal-page-header-height;
+          @include media($mobile) {
+            top: $mobile-page-header-height;
+          }
+          li {
+            display: list-item;
+            background: $mg-light-background;
+            padding: 10px 30px 10px 10px;
+            border-bottom: #ddd solid 1px;
+          }
+
+        }
+      }
+      @include media($tablet) {
+        margin-top: 15px;
+        #hamburger-button {
+          font-size: 30px;
+          float: right;
+          display: block;
+        }
+        ul {
+          display: none;
+          box-shadow: 0px 1px 1px $mg-darkest-green;
+          position: absolute;
+          right: 0;
+          top: $normal-page-header-height;
+          border-top: #ddd solid 1px;
+          li {
+            display: list-item;
+            background: $mg-light-background;
+            border-bottom: #ddd solid 1px;
+            &:hover {
+              background: $mg-light-background-alternative;
+            }
+            a {
+              padding: 10px 30px 10px 10px;
+              display: block;
+            }
+          }
+
+        }
+      }
+
+  }
+}
+
+// FRONTPAGE
+
+body.front #content {
+  @include shift(0);
+  @include span-columns(12);
+  position: relative;
+  padding-top: 60px;
+}
+@include media($smallmobile) {
+  .entry-points {
+    margin-top: 40px;
+  }
+}
+@include media($mobile) {
+  body.front footer {
+    margin-top: 0;
+  }
+}
+.entry-point {
+  @include span-columns(4);
+  @include media($smallmobile) {
+    @include span-columns(4);
+  }
+  h2 {
+    font-size: $base-font-size * 1.2;
+    background: #D8D8D8;
+    text-align: center;
+  }
+  a {
+    color: #999;
+  }
+}
+.frontpage-top {
+  position: relative;
+  @include span-columns(12);
+}
+.quote {
+  font-size: $base-font-size * 1.7;
+  padding-top: 15%;
+  @include media($mobile) {
+    font-size: $base-font-size * 1.4;
+    padding-top: 10%;
+  }
+  @include media($smallmobile) {
+    font-size: $base-font-size * 1.3;
+    padding-top: 0;
+  }
+  
+  width: 50%;
+  position: absolute;
+  left: 5%;
+  top: 0;
+  z-index: 10;
+  .quote-mark {
+    color: #000;
+  }
+}
+.frontpage-image {
+  width: 100%;
+  position: relative;
+  float:left;
+  right: 0;
+  top: 0;
+}
+
+body.node-type-blog, body.page-nyheder {
+  h1 {
+    color: #666;
+  }
+}
+article.node-teaser.node-blog {
+  h1 {
+    font-size: $base-font-size * 2.0;
+  }
+}
+
+body.node-type-page {
+  background: $mg-light-background;
+  h1#page-title, .field-name-field-hero-text {
+    position: relative;
+    left: 0px;
+    color: #ccc;
+    font-weight: bold;
+    //padding: 0 20px;
+    text-shadow: 1px 1px #000;
+  }
+  h1#page-title {
+     @include media($mobile) {
+        font-size: $base-font-size * 2.2;
+      }
+  }
+  .field-name-field-hero-text {
+    @include media($desktop) {
+      font-size: $base-font-size * 2;
+    }
+    @include media($laptop) {
+      font-size: $base-font-size * 2;
+    }
+    @include media($tablet) {
+         font-size: $base-font-size * 1.4;
+       }
+    @include media($mobile) {
+        font-size: $base-font-size * 1.2;
+      }
+  }
+  .field-name-field-hero-image {
+    position: fixed;
+    top: $normal-page-header-height;
+    @include media($mobile) {
+      top: $mobile-page-header-height;
+    }
+    left: 0px;
+    z-index: -100;
+    img {
+      height: auto;
+          box-shadow: 0px 0px 2px $mg-darkest-green;
+    }
+
+  }
+  .field-name-body {
+    background: rgba(255,255,255, 0.75);
+    box-shadow: 0px 0px 4px $mg-darkest-green;
+    margin-top: 10px;
+    padding: 10px 20px;
+    @include span-columns(8);
+    @include media($tablet) {
+      @include span-columns(10);
+    }
+    @include media($mobile) {
+      @include span-columns(4);
+      background:   rgba(255,255,255, 1);
+    }
+    color: #333;
+  }
+}
+.publication-date {
+  background: #EEE;
+  display: inline-block;
+  padding: 2px 5px;
+  font-size: 90%;
+  margin-bottom: 10px;
+}
+
+.icons {
+  font-family: 'icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-blad:before {
+	content: "\e600";
+}
+.icon-menu:before {
+	content: "\e601";
+}
